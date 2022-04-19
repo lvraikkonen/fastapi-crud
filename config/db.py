@@ -1,4 +1,6 @@
-import sys
 from pymongo import MongoClient
+from decouple import config
 
-conn = MongoClient("mongodb+srv://biuser:<password>@claus-mongo-cluster.2skj4.azure.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+conn_str = config("connectionString")
+
+conn = MongoClient(conn_str)

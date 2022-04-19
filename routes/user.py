@@ -13,7 +13,7 @@ async def find_all_users():
 
 
 @user.get('/{id}')
-async def find_one_user(id):
+async def find_one_user(id: str):
     return serializeDict(conn.fastapi.user.find_one({"_id": ObjectId(id)}))
 
 
